@@ -1,0 +1,57 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: false
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+        
+      - name: Build
+        run: npm run build
+        
+      - name: Deploy to static branch
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Create a new branch for static files
+          git checkout --orphan static-deploy
+          
+          # Remove everything except the out directory
+          git rm -rf .
+          git clean -fxd
+          
+          # Copy built files to root
+          cp -r out/* .
+          
+          # Add all files
+          git add .
+          
+          # Commit
+          git commit -m "Deploy static site - $(date)"
+          
+          # Push to static-deploy branch
+          git push origin static-deploy --force
+          
+      - name: Success message
+        run: |
+          echo "✅ Build completed successfully!"
+          echo "📁 Static files deployed to static-deploy branch"
+          echo "🌐 You can serve these files from any static hosting service"
