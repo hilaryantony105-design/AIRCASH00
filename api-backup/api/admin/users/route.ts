@@ -2,6 +2,10 @@ import { type NextRequest, NextResponse } from "next/server"
 import Database from 'better-sqlite3'
 import path from 'path'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 // Get database connection
 const dbPath = path.join(process.cwd(), 'aircash.db')
 const db = new Database(dbPath)

@@ -2,6 +2,9 @@ import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 import { getAdminSessionFromRequest } from "@/lib/auth"
 
+// Use Node.js runtime for JWT support
+export const runtime = 'nodejs'
+
 export function middleware(request: NextRequest) {
   // Protect admin routes
   if (request.nextUrl.pathname.startsWith("/admin")) {

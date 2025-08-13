@@ -2,6 +2,10 @@ import { NextResponse } from "next/server"
 import Database from 'better-sqlite3'
 import path from 'path'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
+
 // Get database connection
 const dbPath = path.join(process.cwd(), 'aircash.db')
 const db = new Database(dbPath)
@@ -27,12 +31,15 @@ export async function GET() {
     // Calculate success rate
     const successRateResult = db.prepare(`
       SELECT 
-        ROUND(
-          CAST(COUNT(CASE WHEN status = 'completed' THEN 1 END) AS REAL) * 100.0 / COUNT(*), 
-          2
-        ) as rate 
+        CASE 
+          WHEN COUNT(*) > 0 THEN 
+            ROUND(
+              CAST(COUNT(CASE WHEN status = 'completed' THEN 1 END) AS REAL) * 100.0 / COUNT(*), 
+              2
+            )
+          ELSE 0
+        END as rate 
       FROM conversion_requests
-      WHERE COUNT(*) > 0
     `).get() as any
     const successRate = successRateResult?.rate || 0
 

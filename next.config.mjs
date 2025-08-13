@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
+  trailingSlash: true,
   // Suppress hydration warnings
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer

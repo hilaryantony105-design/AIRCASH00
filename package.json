@@ -1,4 +1,5 @@
 {
+  "homepage": "http://hilaryantony105-design.github.io/AIRCASH00",
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +7,9 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d out"
   },
   "dependencies": {
     "@hookform/resolvers": "latest",
