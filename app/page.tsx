@@ -8,6 +8,13 @@ export default function Page() {
   return (
     <ClientWrapper>
       <main className="min-h-dvh w-full bg-gradient-to-b from-purple-50 via-white to-purple-50">
+        {/* Demo Notice */}
+        <div className="bg-yellow-50 border-b border-yellow-200 px-4 py-2 text-center">
+          <p className="text-sm text-yellow-800">
+            🚧 <strong>Demo Mode:</strong> This is a static demo version. For full functionality, deploy with server-side API support.
+          </p>
+        </div>
+
         <header className="sticky top-0 z-10 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 border-b">
           <div className="mx-auto max-w-3xl px-4 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">

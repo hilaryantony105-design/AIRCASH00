@@ -5,6 +5,9 @@ const nextConfig = {
   trailingSlash: true,
   basePath: '/AIRCASH00',
   assetPrefix: '/AIRCASH00/',
+  images: {
+    unoptimized: true,
+  },
   // Suppress hydration warnings
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer

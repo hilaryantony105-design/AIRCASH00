@@ -107,34 +107,28 @@ export default function AirtimeBuyer() {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch("/api/conversion/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      // Demo mode for static deployment
+      const demoData = {
+        success: true,
+        data: {
+          reference: `DEMO-${Date.now().toString().slice(-6)}`,
           phoneNumber: normalizePhone(values.phone),
           airtimeAmount: values.amount,
           network: activeTab,
-        }),
-      })
-
-      const result = await response.json()
-
-      if (result.success) {
-        setConversionData(result.data)
-        setShowInstructions(true)
-        toast({
-          title: "Airtime Purchase Request Created",
-          description: `Reference: ${result.data.reference}`,
-        })
-      } else {
-        toast({
-          title: "Error",
-          description: result.error || "Failed to create airtime purchase request",
-          variant: "destructive",
-        })
+          payout: payout,
+          status: 'pending'
+        }
       }
+
+      // Simulate API delay
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      setConversionData(demoData.data)
+      setShowInstructions(true)
+      toast({
+        title: "Demo Mode - Airtime Purchase Request Created",
+        description: `Reference: ${demoData.data.reference} (This is a demo - no actual transaction)`,
+      })
     } catch (error) {
       console.error("Conversion error:", error)
       toast({
