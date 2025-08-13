@@ -3,6 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
+  basePath: '/AIRCASH00',
+  assetPrefix: '/AIRCASH00/',
   // Suppress hydration warnings
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
