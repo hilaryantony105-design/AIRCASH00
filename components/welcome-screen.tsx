@@ -19,7 +19,7 @@ export default function WelcomeScreen() {
             AirCash Pro
           </h1>
           <p className="text-xl text-purple-700 max-w-2xl mx-auto">
-            Sell your airtime for instant cash. Get up to 75% value for Safaricom and 70% for Airtel airtime.
+            Convert your airtime for instant cash. Get up to 75% value for Safaricom and 70% for Airtel airtime.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ export default function WelcomeScreen() {
               onClick={() => setShowSellModal(true)}
             >
               <Smartphone className="mr-3 h-6 w-6" />
-              Sell Your Airtime
+              Convert Your Airtime
               <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
             
@@ -96,12 +96,12 @@ export default function WelcomeScreen() {
         </div>
       </div>
 
-      {/* Sell Airtime Modal */}
+      {/* Convert Airtime Modal */}
       <Dialog open={showSellModal} onOpenChange={setShowSellModal}>
         <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-purple-900 text-center">
-              Sell Your Airtime for Cash
+              Convert Your Airtime for Cash
             </DialogTitle>
           </DialogHeader>
           <AirtimeBuyer />

@@ -77,7 +77,7 @@ After deployment, you'll get a URL like: `https://aircash-pro-abc123.vercel.app`
 1. **Open your deployed URL on phone**: `https://your-domain.vercel.app`
 2. **Enter your real phone number** (must be Safaricom for first test)
 3. **Enter amount**: Start with KES 20
-4. **Click "Sell Safaricom Airtime"**
+4. **Click "Convert Safaricom Airtime"**
 5. **Click "Open Dial Pad"** - your phone will open with USSD code
 6. **Dial**: `*140*20*174379#` (automatically filled)
 7. **Confirm with PIN** - send airtime to test shortcode

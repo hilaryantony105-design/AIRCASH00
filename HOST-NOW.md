@@ -105,7 +105,7 @@ After creating app:
 ### **Step 2: Try the Flow**
 1. Enter your phone number
 2. Enter KES 20
-3. Click "Sell Safaricom Airtime"
+3. Click "Convert Safaricom Airtime"
 4. Click "Open Dial Pad"
 5. **Your phone will open with**: `*140*20*174379#`
 6. Dial and confirm with PIN

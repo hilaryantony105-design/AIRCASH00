@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AirCash Pro - Sell Your Airtime for Cash',
+  title: 'AirCash Pro - Convert Your Airtime for Cash',
   description: 'Get instant cash for your unused airtime. We buy at great rates!',
   generator: 'Next.js',
 }

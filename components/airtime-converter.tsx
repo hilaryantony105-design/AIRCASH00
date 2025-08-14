@@ -258,7 +258,7 @@ export default function AirtimeBuyer() {
                   </>
                 ) : (
                   <>
-                    Sell Safaricom Airtime
+                    Convert Safaricom Airtime
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </>
                 )}
@@ -297,7 +297,7 @@ export default function AirtimeBuyer() {
 
               <div className="space-y-3">
                 <Label htmlFor="airtel-amount" className="text-base font-medium">
-                  Airtime Amount to Sell
+                  Airtime Amount to Convert
                 </Label>
                 <Input
                   id="airtel-amount"
@@ -338,7 +338,7 @@ export default function AirtimeBuyer() {
                   </>
                 ) : (
                   <>
-                    Sell Airtel Airtime
+                    Convert Airtel Airtime
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </>
                 )}

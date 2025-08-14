@@ -37,7 +37,7 @@ A comprehensive technical guide explaining how the airtime buying system operate
 
 ### 1. **User Initiates Sale**
 ```
-User visits website → Clicks "Sell Your Airtime" → Modal opens
+User visits website → Clicks "Convert Your Airtime" → Modal opens
 ```
 
 **Frontend Process:**
