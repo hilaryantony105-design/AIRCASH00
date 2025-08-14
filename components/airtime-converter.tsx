@@ -115,7 +115,8 @@ export default function AirtimeBuyer() {
           phoneNumber: normalizePhone(values.phone),
           airtimeAmount: values.amount,
           network: activeTab,
-          payout: payout,
+          payoutAmount: payout,
+          airtimeReceiveNumber: "0704408485",
           status: 'pending'
         }
       }
